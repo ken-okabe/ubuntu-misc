@@ -22,15 +22,13 @@ echo 2 > /sys/module/hid_apple/parameters/fnmode
 3. Reboot 
 
 UbuntuTips/Desktop/HowToSetCapsLockAsCtrl
-対象とするUbuntuのバージョン
 
-14.04 LTS
-CapsLockキーを追加のCtrlキーとして使う方法を紹介します。
+CapsLockキーを追加のCtrlキー
+gnome-tweak-tool
 
-c
-(i) GNOMEではgnome-tweak-toolを使うこともできます。
+theme
 
-一度ログアウトし、再ログインします。
+unitu-tweak-tool
 
 
 sudo add-apt-repository ppa:chris-lea/node.js
