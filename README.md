@@ -33,7 +33,20 @@ c
 一度ログアウトし、再ログインします。
 
 
+sudo add-apt-repository ppa:chris-lea/node.js
 
+sudo apt update
+
+sudo apt install nodejs
+
+npm xmas
+
+node -v
+
+
+sudo add-apt-repository ppa:indicator-brightness/ppa
+
+sudo apt-get update && sudo apt-get install indicator-brightness
 
 
 ランチャーの『システム設定』をクリックして起動し、セキュリティとプライバシーをクリック、
