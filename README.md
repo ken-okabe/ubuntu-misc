@@ -1,6 +1,13 @@
 ubuntu-misc
 ===========
 
+        sudo apt-get install wicd-gtk 
+
+
+        sudo apt-get remove --purge network-manager-gnome network-manager 
+
+
+
 ```
 shortcut
 wmctrl -xa terminator.Terminator || terminator
