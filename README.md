@@ -21,6 +21,8 @@ unity-tweak-tool
 terminator 
 xbacklight
 xmctrl
+fcitx-mozc
+
 
  xbacklight -set 10
  
