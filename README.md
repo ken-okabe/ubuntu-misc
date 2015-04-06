@@ -9,8 +9,6 @@ ubuntu-misc
 
 shortcut
 
-wmctrl -xa terminator.Terminator || terminator
-
 
 HowToSetCapsLockAsCtrl
 
@@ -18,7 +16,17 @@ gnome-tweak-tool
 
 theme
 
-unitu-tweak-tool
+unity-tweak-tool
+
+terminator 
+xbacklight
+xmctrl
+
+ xbacklight -set 10
+ 
+ 
+wmctrl -xa terminator.Terminator || terminator
+
 
 
 
