@@ -9,6 +9,8 @@ ubuntu-misc
 
 shortcut
 
+ commented out AutoConnectTimeout in /etc/bluetooth/main.conf
+
 
 HowToSetCapsLockAsCtrl
 
