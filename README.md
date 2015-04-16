@@ -5,7 +5,7 @@ blueman
 
 sudo visudo
 
-# User alias specification
+User alias specification
 
 kenokabe ALL = NOPASSWD: /home/ken/startup
 
