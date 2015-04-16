@@ -1,11 +1,11 @@
 ubuntu-misc
 ===========
 
-        sudo apt-get install wicd-gtk 
+blueman
 
+sudo gedit /etc/rc.local
 
-        sudo apt-get remove --purge network-manager-gnome network-manager 
-
+            modprobe -r mwifiex_usb
 
 shortcut
 
