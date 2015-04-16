@@ -3,9 +3,13 @@ ubuntu-misc
 
 blueman
 
-sudo gedit /etc/rc.local
+sudo visudo
 
-            modprobe -r mwifiex_usb
+# User alias specification
+
+kenokabe ALL = NOPASSWD: /home/ken/startup
+
+/home/ken/startup <-- executable
 
 shortcut
 
