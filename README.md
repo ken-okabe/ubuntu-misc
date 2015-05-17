@@ -33,7 +33,7 @@ unity-tweak-tool
 
 terminator 
 xbacklight
-xmctrl
+wmctrl
 fcitx-mozc
 
 
