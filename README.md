@@ -5,17 +5,7 @@ blueman
 
 sudo visudo
 
-User alias specification
 
-kenokabe ALL = NOPASSWD: /home/ken/startup
-
-------------
-modprobe -r mwifiex_usb
-------------
-
-/home/ken/startup <-- executable
-
-shortcut
 
 /etc/bluetooth/main.conf
 
