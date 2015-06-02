@@ -21,6 +21,33 @@ shortcut
 
  commented out AutoConnectTimeout 
  RememberPowered   false.
+ 
+ 
+ /etc/rc.local
+
+``` 
+ # Prevents the Bluetooth USB card from getting reset which disconnects the mouse
+BTUSB_DEV="1286:2044"
+BTUSB_BINDING="$(lsusb -d "$BTUSB_DEV" |
+    cut -f 1 -d : |
+    sed -e 's,Bus ,,' -e 's, Device ,/,' |
+    xargs -I {} udevadm info -q path -n /dev/bus/usb/{} |
+    xargs basename)"
+
+
+echo "Disabling autosuspend for Bluetooth USB Soundcard: $BTUSB_BINDING..."
+echo -1 > "/sys/bus/usb/devices/$BTUSB_BINDING/power/autosuspend_delay_ms"
+
+exit 0
+```
+
+
+ 
+ 
+ echo 1 | sudo tee /sys/module/bluetooth/parameters/disable_esco
+sudo /etc/init.d/bluetooth restart
+# persist setting
+echo "options bluetooth disable_esco=1" | sudo tee /etc/modprobe.d/bluetooth-tweaks.conf
 
 
 HowToSetCapsLockAsCtrl
@@ -48,68 +75,6 @@ wmctrl -xa terminator.Terminator || terminator
 sudo add-apt-repository ppa:indicator-brightness/ppa
 
 sudo apt-get update && sudo apt-get install indicator-brightness
-
-
-ランチャーの『システム設定』をクリックして起動し、セキュリティとプライバシーをクリック、
-
-「ファイルとアプリケーション」タブをクリック、ファイルとアプリケーションの利用状況を記録をクリックしてオフにする。
-
-「検索」タブをクリック、Dashで検索するとき：オンラインの検索結果を含めるをオフにする。
-
-
-$ gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
-
-$ sudo apt-get remove unity-lens-video unity-scope-video-remote unity-lens-shopping unity-lens-music unity-lens-photos 
-
-###TLP
-
-
- sudo add-apt-repository ppa:linrunner/tlp
- 
- sudo apt-get update
- 
- sudo apt-get install tlp tlp-rdw smartmontools ethtool
-
-
-###PowerSavingTweaks for Intel Graphics
-
-
-sudo nano /etc/default/grub
-
- GRUB_CMDLINE_LINUX_DEFAULT="intel_pstate=disable i915.lvds_downclock=1 drm.vblankoffdelay=1 i915.semaphores=1 i915_enable_rc6=1 i915_enable_fbc=1"
-
-sudo update-grub
-
-sudo apt install fcitx-mozc
-
-
-
-sudo add-apt-repository ppa:chris-lea/node.js
-
-sudo apt update
-
-sudo apt install nodejs
-
-npm xmas
-
-node -v
-
-
-With rc.local
-
-This methods simply automatically applies during startup the technique used to change fnmode temporarily.
-
-1. Edit the /etc/rc.local file.
-
-gksudo gedit /etc/rc.local
-
-2. Add this line near the end of the file, before the "exit" line:
-
-echo 2 > /sys/module/hid_apple/parameters/fnmode
-
-3. Reboot 
-
-
 
 Download the .deb packages.
 
