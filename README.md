@@ -10,7 +10,7 @@ sudo grub-editenv - unset recordfail
 sudo gedit /etc/rc.local
 
 ```
-powertop --auto-tune
+tlp start
 
 exit 0
 ```
