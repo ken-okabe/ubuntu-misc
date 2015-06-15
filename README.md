@@ -7,6 +7,13 @@ sudo visudo
 
 sudo grub-editenv - unset recordfail
 
+sudo gedit /etc/rc.local
+
+```
+powertop --auto-tune
+
+exit 0
+```
 
 
 terminator 
