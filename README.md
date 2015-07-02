@@ -21,13 +21,11 @@ xbacklight
 wmctrl
 fcitx-mozc
 
-
- xbacklight -set 10
  
  
 wmctrl -xa terminator.Terminator || terminator
 
-
+wmctrl -xa google-chrome
 
 
 
@@ -48,4 +46,8 @@ sudo reboot
 To uninstall,
 
 sudo apt-get remove 'linux-headers-4.0*' 'linux-image-4.0*'
+
+
+
+TLP stuff
 
